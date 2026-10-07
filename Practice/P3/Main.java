@@ -1,0 +1,3 @@
+class LibraryMember{private int[] h=new int[10];private int n;LibraryMember(String i,int l){}protected void chargeFine(int a){h[n++]=a;}int[] getFineHistory(){return java.util.Arrays.copyOf(h,n);}int getTotalFine(){int s=0;for(int x:getFineHistory())s+=x;return s;}}
+class StudentMember extends LibraryMember{StudentMember(String i,int l,String c){super(i,l);}@Override protected void chargeFine(int a){super.chargeFine(a/2);}}
+public class Main{public static void main(String[]a){}}

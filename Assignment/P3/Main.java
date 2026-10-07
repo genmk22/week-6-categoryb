@@ -1,0 +1,3 @@
+class GymMember{private int[] h=new int[10];private int n;GymMember(String i,int f){if(i==null||i.trim().length()<4||f<=0)throw new IllegalArgumentException();}protected void chargeLateFee(int a){h[n++]=a;}int[] getLateFeeHistory(){return java.util.Arrays.copyOf(h,n);}int getTotalLateFees(){int s=0;for(int x:getLateFeeHistory())s+=x;return s;}}
+class PremiumMember extends GymMember{PremiumMember(String i,int f,String t){super(i,f);}@Override protected void chargeLateFee(int a){super.chargeLateFee(a/2);}}
+public class Main{public static void main(String[]a){PremiumMember p=new PremiumMember("MEM5",2000,"Coach Riya");p.chargeLateFee(200);System.out.println(p.getTotalLateFees());}}

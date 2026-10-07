@@ -1,0 +1,3 @@
+class GymMember{GymMember(String i,int f){}String displayInfo(){return "Standard | Sessions: 0";}}
+class PremiumMember extends GymMember{String trainerName;PremiumMember(String i,int f,String t){super(i,f);trainerName=t;}String displayInfo(){return "Premium | Trainer: "+trainerName+" | Sessions: 0";}}
+public class Main{static String batchPrint(GymMember[] ms){StringBuilder b=new StringBuilder();for(GymMember m:ms){b.append(m.displayInfo());if(m instanceof PremiumMember)b.append(" [Trainer via downcast: ").append(((PremiumMember)m).trainerName).append("]");b.append(" | ");}return b.toString();}public static void main(String[]a){System.out.print(batchPrint(new GymMember[]{new GymMember("MEM6",1000),new PremiumMember("MEM7",2000,"Coach Riya")}));}}

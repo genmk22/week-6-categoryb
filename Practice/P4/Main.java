@@ -1,0 +1,3 @@
+class LibraryMember{LibraryMember(String i,int l){}String displayInfo(){return "General | Books: 0";}}
+class StudentMember extends LibraryMember{String course;StudentMember(String i,int l,String c){super(i,l);course=c;}String displayInfo(){return "Student | Course: "+course+" | Books: 0";}}
+public class Main{static String batchPrint(LibraryMember[] ms){StringBuilder b=new StringBuilder();for(LibraryMember m:ms){b.append(m.displayInfo());if(m instanceof StudentMember)b.append(" [Course via downcast: ").append(((StudentMember)m).course).append("]");b.append(" | ");}return b.toString();}public static void main(String[]a){}}
